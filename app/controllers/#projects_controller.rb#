@@ -1,14 +1,12 @@
 # coding: utf-8
 class ProjectsController < ApplicationController
 
-  #only内の関数を呼ぶ出す時、最初に行う
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
-  
   def index
     @projects = Project.all
   end
 
   def show
+    @project = Project.find(params[:id])
   end
 
   def new
@@ -24,31 +22,14 @@ class ProjectsController < ApplicationController
     end
   end
 
-  def edit
-  end
-
-  def update
-    if @project.update(project_params)
-      redirect_to projects_path
-    else
-      render 'edit'
-    end
-  end
-
-  def destroy
-    @project.destroy
-    redirect_to projects_path
+  def w
+    @project = Project.find(params[:id])
   end
 
   #セキュリティ的にホームから来るものをフィルタリングする
   private
-
   def project_params
     params[:project].permit(:title)
   end
-
-  def set_project
-    @project = Project.find(params[:id])
-  end
-
+  
 end
