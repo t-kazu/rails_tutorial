@@ -9,6 +9,14 @@
   </head>
 
   <body>
-    <%= yield %>
+
+      <%= image_tag "logo.png" %>
+	  
+      <%= yield %>
+
+      <%= link_to "Home","/"%><br>
+      <%= link_to "projects","/projects"%><br>
+      <%= link_to "projects_path", projects_path %>
+      
   </body>
 </html>
