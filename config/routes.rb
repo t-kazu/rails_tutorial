@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   end
   resources :users
 
-  post 'projects/:project_id/tasks/id/toggle' => 'tasks#toggle'
+  post '/projects/:project_id/tasks/:id/toggle' => 'tasks#toggle'
   
   root 'projects#index'
   

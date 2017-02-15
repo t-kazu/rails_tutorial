@@ -15,13 +15,11 @@
 	<%end%>
     </li>
 </u1>
-<script>
-$(function(){
-	$("input[type=checkbox]").click(function(){
-		const project_id = $(this).data('project_id');
-		const task_id = $(this).data('id');
-		const url = `/projects/${project_id}/tasks/${task_id}/toggle`;
-		$.post(url);
-    });
-});
-</script>
+<!-- 
+     <SCRIPT>
+     $(function(){
+     $("input[type=checkbox]").click(function(){
+     $.post('/projects/'+$(this).data('project_id')+'/tasks/'+$(this).data('id')'/toggle');
+     });
+     });
+     </script> -->
